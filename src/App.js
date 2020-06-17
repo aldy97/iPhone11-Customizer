@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './components/Header.js';
-import Selector from './components/Selector.js';
+import Header from './components/header/index';
+import Selector from './components/selector/index';
 import store from './store/index.js';
 import { Provider } from 'react-redux';
 import { GlobalStyle } from './style';

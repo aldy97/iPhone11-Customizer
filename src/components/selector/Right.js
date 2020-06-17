@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { RightWrapper } from './style';
+import { RightWrapper } from '../style';
 
 function Right(props) {
   return (

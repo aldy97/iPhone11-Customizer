@@ -1,5 +1,5 @@
 import React from 'react';
-import { LeftWrapper } from './style';
+import { LeftWrapper } from '../style';
 
 function Left(props) {
   return <LeftWrapper></LeftWrapper>;
