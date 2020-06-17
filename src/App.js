@@ -1,7 +1,7 @@
 import React from 'react';
 import store from './store/index.js';
-import Header from './components/Header';
-import Selector from './components/Selector';
+import Header from './components/Header.js';
+import Selector from './components/Selector.js';
 import { Provider } from 'react-redux';
 import { GlobalStyle } from './style';
 import { GlobalStyleFont } from './static/iconfont/iconfont';

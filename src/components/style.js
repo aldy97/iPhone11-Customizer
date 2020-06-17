@@ -18,12 +18,13 @@ export const NavigationWrapper = styled.div`
     line-height: 44px;
     color: #f5f5f7;
     opacity: 0.8;
+    flex: 1;
+    text-align: center;
   }
   .iconfont: hover {
     opacity: 1;
   }
   .glass {
-    margin-right: 40px;
   }
   .bag {
     font-size: 18px;
@@ -78,8 +79,4 @@ export const RightWrapper = styled.div`
     display: block;
     margin-top: 3px;
   }
-`;
-
-export const Divider = styled.div`
-  height: 1px;
 `;
