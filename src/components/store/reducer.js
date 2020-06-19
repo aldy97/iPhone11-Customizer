@@ -11,6 +11,7 @@ const defaultState = {
     { left: 'iPhone 11 Pro', right: 'From $1379', price: 1379 },
     { left: 'iPhone 11 Pro Max', right: 'From $1519', price: 1579 },
   ],
+  ModelSelected: 0,
   FinishOptionList: [
     {
       url:
@@ -32,6 +33,11 @@ const defaultState = {
         'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/finish-gold-201909?wid=96&hei=96&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1567037348220',
       text: 'Gold',
     },
+  ],
+  CapacityList: [
+    { cap: '64GB', text: ['$1,379.00', '$1,519.00'] },
+    { cap: '256GB', text: ['$1,589.00', '$1,729.00'] },
+    { cap: '512GB', text: ['$1,859.00', '$1,999.00'] },
   ],
 };
 

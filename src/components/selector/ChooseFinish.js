@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { ChooseFinishWrapper, FinishOptionWrapper } from '../style';
 
+//颜色选择区域
 function ChooseFinish(props) {
   const [optionList, setOptionList] = useState([false, false, false, false]);
 
@@ -14,10 +15,9 @@ function ChooseFinish(props) {
             className={optionList[index] ? 'selected' : null}
             key={index}
             onClick={() => {
-              const list = optionList;
+              const list = [false, false, false, false];
               list[index] = true;
               setOptionList(list);
-              console.log(optionList);
             }}
           >
             <div className='content'>

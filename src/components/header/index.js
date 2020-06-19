@@ -7,8 +7,8 @@ function Header(props) {
     <HeaderWrapper>
       <NavigationWrapper>
         <i className='iconfont logo'>&#xe60b;</i>
-        {props.headerItemList.map((item) => {
-          return <ItemWrapper>{item}</ItemWrapper>;
+        {props.headerItemList.map((item, index) => {
+          return <ItemWrapper key={index}>{item}</ItemWrapper>;
         })}
         <i className='iconfont glass'>&#xe682;</i>
         <i className='iconfont bag'>&#xe60c;</i>

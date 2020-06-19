@@ -2,6 +2,7 @@ import React from 'react';
 import TradeIn from './TradeIn';
 import ChooseModel from './ChooseModel';
 import ChooseFinish from './ChooseFinish';
+import ChooseCapacity from './ChooseCapacity';
 import { connect } from 'react-redux';
 import { RightWrapper } from '../style';
 
@@ -13,6 +14,7 @@ function Right(props) {
       <TradeIn />
       <ChooseModel />
       <ChooseFinish />
+      <ChooseCapacity />
     </RightWrapper>
   );
 }

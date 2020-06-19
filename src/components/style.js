@@ -81,31 +81,6 @@ export const RightWrapper = styled.div`
   }
 `;
 
-export const TradeInWrapper = styled.div`
-  margin-top: 84px;
-  h1 {
-    font-size: 17px;
-    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
-      Arial, sans-serif;
-    color: #111111;
-    margin-top: 0;
-  }
-  h2 {
-    background: transparent;
-    border: 0;
-    color: #0070c9;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  h2: hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-`;
-
 export const OptionWrapper = styled.div`
   border: 1px solid rgb(195, 195, 195);
   width: 442px;
@@ -157,11 +132,54 @@ export const FinishOptionWrapper = styled(OptionWrapper)`
   }
 `;
 
+export const CapOptionWrapper = styled(FinishOptionWrapper)`
+  .cap {
+    font-size: 29px;
+    font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue,
+      Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.007em;
+  }
+  .text {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -55px;
+    letter-spacing: -0.01em;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+  }
+`;
+
 export const Divider = styled.div`
   border: 1px solid rgb(195, 195, 195);
   width: 442px;
   margin-top: 20px;
   margin-bottom: 20px;
+`;
+
+export const TradeInWrapper = styled.div`
+  margin-top: 84px;
+  h1 {
+    font-size: 17px;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+    color: #111111;
+    margin-top: 0;
+  }
+  h2 {
+    background: transparent;
+    border: 0;
+    color: #0070c9;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h2: hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 `;
 
 export const ChooseModelWrapper = styled(TradeInWrapper)`
@@ -173,3 +191,5 @@ export const ChooseModelWrapper = styled(TradeInWrapper)`
 `;
 
 export const ChooseFinishWrapper = styled(ChooseModelWrapper)``;
+
+export const ChooseCapacityWrapper = styled(ChooseModelWrapper)``;
