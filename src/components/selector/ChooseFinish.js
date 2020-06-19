@@ -5,10 +5,6 @@ import { ChooseFinishWrapper, FinishOptionWrapper } from '../style';
 function ChooseFinish(props) {
   const [optionList, setOptionList] = useState([false, false, false, false]);
 
-  const handleOptionClick = (index) => {
-    console.log(index);
-  };
-
   return (
     <ChooseFinishWrapper>
       <h1>Choose your finish.</h1>
@@ -17,7 +13,12 @@ function ChooseFinish(props) {
           <FinishOptionWrapper
             className={optionList[index] ? 'selected' : null}
             key={index}
-            onClick={handleOptionClick(index)}
+            onClick={() => {
+              const list = optionList;
+              list[index] = true;
+              setOptionList(list);
+              console.log(optionList);
+            }}
           >
             <div className='content'>
               <img src={item.url} alt='' />
