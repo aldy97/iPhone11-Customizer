@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { handleChooseModel } from '../store/actionCreators';
-import { ChooseModelWrapper, OptionWrapper, Divider } from '../style';
+import { SectionWrapper, OptionWrapper, Divider } from '../style';
 import { connect } from 'react-redux';
 
 function ChooseModel(props) {
   const [modelList, setModelList] = useState([false, false]);
   return (
-    <ChooseModelWrapper>
+    <SectionWrapper>
       <h1>Choose your model.</h1>
       {props.ModelOptions.map((item, index) => {
         return (
@@ -27,7 +27,7 @@ function ChooseModel(props) {
       })}
 
       <Divider />
-    </ChooseModelWrapper>
+    </SectionWrapper>
   );
 }
 

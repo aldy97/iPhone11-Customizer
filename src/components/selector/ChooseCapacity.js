@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { ChooseCapacityWrapper, CapOptionWrapper, Divider } from '../style';
+import { SectionWrapper, SmallOptionWrapper, Divider2 } from '../style';
 
 function ChooseCapacity(props) {
   const [capList, setCapList] = useState([false, false, false]);
   return (
-    <ChooseCapacityWrapper>
+    <SectionWrapper>
       <h1>Choose your capacity.</h1>
       {props.CapacityList.map((item, index) => {
         return (
-          <CapOptionWrapper
+          <SmallOptionWrapper
             className={capList[index] ? 'selected' : null}
             key={index}
             onClick={() => {
@@ -19,12 +19,12 @@ function ChooseCapacity(props) {
             }}
           >
             <div className='cap'>{item.cap}</div>
-            <div className='text'>{item.text[props.ModelSelected]}</div>
-          </CapOptionWrapper>
+            <div className='capText'>{item.text[props.ModelSelected]}</div>
+          </SmallOptionWrapper>
         );
       })}
-      <Divider />
-    </ChooseCapacityWrapper>
+      <Divider2 />
+    </SectionWrapper>
   );
 }
 

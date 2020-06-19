@@ -12,6 +12,7 @@ function TradeIn(props) {
       {props.TradeInOptions.map((item, index) => {
         return (
           <OptionWrapper
+            key={index}
             className={tradeList[index] ? 'selected' : null}
             onClick={() => {
               const list = [false, false];
@@ -36,8 +37,4 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = () => {
-  return;
-};
-
-export default connect(mapState, mapDispatch)(TradeIn);
+export default connect(mapState, null)(TradeIn);

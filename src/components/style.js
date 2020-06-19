@@ -81,6 +81,7 @@ export const RightWrapper = styled.div`
   }
 `;
 
+//大长方形选项
 export const OptionWrapper = styled.div`
   border: 1px solid rgb(195, 195, 195);
   width: 442px;
@@ -109,7 +110,8 @@ export const OptionWrapper = styled.div`
   }
 `;
 
-export const FinishOptionWrapper = styled(OptionWrapper)`
+//小长方形选项
+export const SmallOptionWrapper = styled(OptionWrapper)`
   width: 213.5px;
   height: 108px;
   display: inline-block;
@@ -130,9 +132,6 @@ export const FinishOptionWrapper = styled(OptionWrapper)`
     font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
       Arial, sans-serif;
   }
-`;
-
-export const CapOptionWrapper = styled(FinishOptionWrapper)`
   .cap {
     font-size: 29px;
     font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue,
@@ -140,7 +139,7 @@ export const CapOptionWrapper = styled(FinishOptionWrapper)`
     font-weight: 400;
     letter-spacing: 0.007em;
   }
-  .text {
+  .capText {
     font-size: 12px;
     font-weight: 400;
     margin-top: -55px;
@@ -150,13 +149,7 @@ export const CapOptionWrapper = styled(FinishOptionWrapper)`
   }
 `;
 
-export const Divider = styled.div`
-  border: 1px solid rgb(195, 195, 195);
-  width: 442px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-`;
-
+//Trade-in区块的容器
 export const TradeInWrapper = styled.div`
   margin-top: 84px;
   h1 {
@@ -182,7 +175,8 @@ export const TradeInWrapper = styled.div`
   }
 `;
 
-export const ChooseModelWrapper = styled(TradeInWrapper)`
+//基于TradeInWrapper实现其他区块的容器
+export const SectionWrapper = styled(TradeInWrapper)`
   margin-top: 0;
   h1 {
     font-weight: 400;
@@ -190,6 +184,15 @@ export const ChooseModelWrapper = styled(TradeInWrapper)`
   }
 `;
 
-export const ChooseFinishWrapper = styled(ChooseModelWrapper)``;
+//用于选项是大长方形的配置区块
+export const Divider = styled.div`
+  border: 1px solid rgb(195, 195, 195);
+  width: 442px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
 
-export const ChooseCapacityWrapper = styled(ChooseModelWrapper)``;
+//用于选项是小长方形的配置区块
+export const Divider2 = styled(Divider)`
+  margin-top: 2px;
+`;
