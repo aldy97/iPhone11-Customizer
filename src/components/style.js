@@ -80,3 +80,96 @@ export const RightWrapper = styled.div`
     margin-top: 3px;
   }
 `;
+
+export const TradeInWrapper = styled.div`
+  margin-top: 84px;
+  h1 {
+    font-size: 17px;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+    color: #111111;
+    margin-top: 0;
+  }
+  h2 {
+    background: transparent;
+    border: 0;
+    color: #0070c9;
+    font-size: inherit;
+    line-height: inherit;
+    font-weight: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h2: hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`;
+
+export const OptionWrapper = styled.div`
+  border: 1px solid rgb(195, 195, 195);
+  width: 442px;
+  height: 83px;
+  margin-bottom: 10px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 5px;
+  div {
+    flex: 1;
+    line-height: 83px;
+    font-size: 17px;
+    color: #333;
+  }
+  .left {
+    text-align: left;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  .right {
+    text-align: right;
+    margin-right: 10px;
+  }
+  &.selected {
+    border: 1px solid #0070c9;
+  }
+`;
+
+export const FinishOptionWrapper = styled(OptionWrapper)`
+  width: 213.5px;
+  height: 108px;
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 18px;
+  text-align: center;
+  .content {
+    line-height: 108px;
+  }
+  img {
+    width: 32px;
+    height: 32px;
+  }
+  .text {
+    margin-top: -75px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
+      Arial, sans-serif;
+  }
+`;
+
+export const Divider = styled.div`
+  border: 1px solid rgb(195, 195, 195);
+  width: 442px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+export const ChooseModelWrapper = styled(TradeInWrapper)`
+  margin-top: 0;
+  h1 {
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+`;
+
+export const ChooseFinishWrapper = styled(ChooseModelWrapper)``;
