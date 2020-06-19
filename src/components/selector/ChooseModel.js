@@ -3,40 +3,27 @@ import { ChooseModelWrapper, OptionWrapper, Divider } from '../style';
 import { connect } from 'react-redux';
 
 function ChooseModel(props) {
-  const [isFirstSelected, setFirstSelected] = useState(false);
-  const [isSecondSelected, setSecondSelected] = useState(false);
-
-  const handleFirstClick = () => {
-    if (!isFirstSelected) {
-      setFirstSelected(true);
-      setSecondSelected(false);
-    }
-  };
-
-  const handleSecondClick = () => {
-    if (!isSecondSelected) {
-      setSecondSelected(true);
-      setFirstSelected(false);
-    }
-  };
-
+  const [modelList, setModelList] = useState([false, false]);
   return (
     <ChooseModelWrapper>
       <h1>Choose your model.</h1>
-      <OptionWrapper
-        className={isFirstSelected ? 'selected' : null}
-        onClick={handleFirstClick}
-      >
-        <div className='left'>{props.ModelOptions[0].left}</div>
-        <div className='right'>{props.ModelOptions[0].right}</div>
-      </OptionWrapper>
-      <OptionWrapper
-        className={isSecondSelected ? 'selected' : null}
-        onClick={handleSecondClick}
-      >
-        <div className='left'>{props.ModelOptions[1].left}</div>
-        <div className='right'>{props.ModelOptions[1].right}</div>
-      </OptionWrapper>
+      {props.ModelOptions.map((item, index) => {
+        return (
+          <OptionWrapper
+            className={modelList[index] ? 'selected' : null}
+            key={index}
+            onClick={() => {
+              const list = [false, false];
+              list[index] = true;
+              setModelList(list);
+            }}
+          >
+            <div className='left'>{item.left}</div>
+            <div className='right'>{item.right}</div>
+          </OptionWrapper>
+        );
+      })}
+
       <Divider />
     </ChooseModelWrapper>
   );
