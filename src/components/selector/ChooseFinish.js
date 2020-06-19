@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { ChooseFinishWrapper, FinishOptionWrapper } from '../style';
+import { ChooseFinishWrapper, FinishOptionWrapper, Divider } from '../style';
 
 //颜色选择区域
 function ChooseFinish(props) {
@@ -27,6 +27,7 @@ function ChooseFinish(props) {
           </FinishOptionWrapper>
         );
       })}
+      <Divider />
     </ChooseFinishWrapper>
   );
 }

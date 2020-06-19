@@ -1,15 +1,16 @@
+import * as constants from '../store/Constants';
 const defaultState = {
   headerItemList: ['Mac', 'iPad', 'iPhone', 'Watch', 'TV', 'Music', 'Support'],
   titleList: ['Buy iPhone 11 Pro', 'Buy iPhone 11 Pro Max'],
   titleIndex: 0,
   subtitle: 'Get up to $350 off with trade-in*',
   TradeInOptions: [
-    { left: 'Yes', right: 'From $1029', price: 1029 },
-    { left: 'No', right: 'From $1379', price: 1379 },
+    { left: 'Yes', right: 'From $1029' },
+    { left: 'No', right: 'From $1379' },
   ],
   ModelOptions: [
-    { left: 'iPhone 11 Pro', right: 'From $1379', price: 1379 },
-    { left: 'iPhone 11 Pro Max', right: 'From $1519', price: 1579 },
+    { left: 'iPhone 11 Pro', right: 'From $1379' },
+    { left: 'iPhone 11 Pro Max', right: 'From $1519' },
   ],
   ModelSelected: 0,
   FinishOptionList: [
@@ -42,5 +43,10 @@ const defaultState = {
 };
 
 export default (state = defaultState, action) => {
+  if (action.type === constants.CHOOSE_MODEL) {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState.ModelSelected = action.index;
+    return newState;
+  }
   return state;
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { ChooseCapacityWrapper, CapOptionWrapper } from '../style';
+import { ChooseCapacityWrapper, CapOptionWrapper, Divider } from '../style';
 
 function ChooseCapacity(props) {
   const [capList, setCapList] = useState([false, false, false]);
@@ -23,6 +23,7 @@ function ChooseCapacity(props) {
           </CapOptionWrapper>
         );
       })}
+      <Divider />
     </ChooseCapacityWrapper>
   );
 }
@@ -34,8 +35,6 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = () => {
-  return;
-};
+const mapDispatch = (dispatch) => ({});
 
 export default connect(mapState, mapDispatch)(ChooseCapacity);

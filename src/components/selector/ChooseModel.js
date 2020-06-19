@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { handleChooseModel } from '../store/actionCreators';
 import { ChooseModelWrapper, OptionWrapper, Divider } from '../style';
 import { connect } from 'react-redux';
 
@@ -16,6 +17,7 @@ function ChooseModel(props) {
               const list = [false, false];
               list[index] = true;
               setModelList(list);
+              props.chooseModel(index);
             }}
           >
             <div className='left'>{item.left}</div>
@@ -33,4 +35,11 @@ const mapState = (state) => {
   return { ModelOptions: state.getIn(['reducer', 'ModelOptions']) };
 };
 
-export default connect(mapState, null)(ChooseModel);
+const mapDispatch = (dispatch) => ({
+  chooseModel(index) {
+    const action = handleChooseModel(index);
+    dispatch(action);
+  },
+});
+
+export default connect(mapState, mapDispatch)(ChooseModel);
