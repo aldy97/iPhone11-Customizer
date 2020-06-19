@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import FinishOption from './FinishOption';
 import { connect } from 'react-redux';
-import { ChooseFinishWrapper } from '../style';
+import { ChooseFinishWrapper, FinishOptionWrapper } from '../style';
 
 function ChooseFinish(props) {
   const [optionList, setOptionList] = useState([false, false, false, false]);
@@ -15,13 +14,16 @@ function ChooseFinish(props) {
       <h1>Choose your finish.</h1>
       {props.FinishOptionList.map((item, index) => {
         return (
-          <FinishOption
+          <FinishOptionWrapper
             className={optionList[index] ? 'selected' : null}
-            url={item.url}
-            text={item.text}
             key={index}
             onClick={handleOptionClick(index)}
-          />
+          >
+            <div className='content'>
+              <img src={item.url} alt='' />
+              <div className='text'>{item.text}</div>
+            </div>
+          </FinishOptionWrapper>
         );
       })}
     </ChooseFinishWrapper>
