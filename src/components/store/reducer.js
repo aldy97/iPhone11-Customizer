@@ -54,12 +54,12 @@ const defaultState = {
     { left: 'No AppleCare+ Coverage', right: '', price: 0 },
     { left: 'AppleCare+', right: '+$249.00', price: 249 },
   ],
-  //默认没有选择AC
+  AppleCareIsSelected: false,
   AppleCareSelected: 0,
   AppleCareTitle: 'Would you like to add AppleCare+ coverage?',
   AppleCareDesc:
     'Extend your hardware and software coverage and get priority support from the people who know iPhone best.',
-  //3-D array, 行数代表Cap，列数代表Model
+  //每一组（AC/not AC）行数代表Cap，列数代表Model
   PriceList: [
     [
       [1379, 1519],
@@ -79,6 +79,7 @@ export default (state = defaultState, action) => {
   if (action.type === constants.CHOOSE_MODEL) {
     const newState = JSON.parse(JSON.stringify(state));
     newState.ModelSelected = action.index;
+    newState.titleIndex = action.index;
     newState.Price =
       newState.PriceList[newState.AppleCareSelected][newState.CapacitySelected][
         action.index
@@ -97,6 +98,7 @@ export default (state = defaultState, action) => {
   if (action.type === constants.CHOOSE_AC) {
     const newState = JSON.parse(JSON.stringify(state));
     newState.AppleCareSelected = action.index;
+    newState.AppleCareIsSelected = action.index === 1 ? true : false;
     newState.Price =
       newState.PriceList[action.index][newState.CapacitySelected][
         newState.ModelSelected
