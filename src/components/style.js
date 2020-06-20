@@ -203,3 +203,39 @@ export const Divider = styled.div`
 export const Divider2 = styled(Divider)`
   margin-top: 2px;
 `;
+
+export const TotalPriceWrapper = styled.div`
+  width: 442px;
+  height: 200px;
+  background: #fafafa;
+`;
+
+export const PriceSection = styled.div`
+  height: 94px;
+  padding-left: 25px;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.004em;
+  font-family: SF Pro Display, SF Pro Icons, AOS Icons, Helvetica Neue,
+    Helvetica, Arial, sans-serif;
+  line-height: 94px;
+`;
+
+export const PriceDivider = styled(Divider)`
+  width: 385px;
+`;
+
+export const AddToBagButton = styled.div`
+  width: 333px;
+  height: 43px;
+  border: 1px solid #07c;
+  text-align: center;
+  line-height: 43px;
+  margin-left: 25px;
+  margin-top: 45px;
+  background-color: #0070c9;
+  background: linear-gradient(#42a1ec, #0070c9);
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+`;

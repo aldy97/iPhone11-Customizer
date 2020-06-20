@@ -4,6 +4,7 @@ import ChooseModel from './ChooseModel';
 import ChooseFinish from './ChooseFinish';
 import ChooseCapacity from './ChooseCapacity';
 import AppleCare from './AppleCare';
+import TotalPrice from './TotalPrice';
 import { connect } from 'react-redux';
 import { RightWrapper } from '../style';
 
@@ -17,6 +18,7 @@ function Right(props) {
       <ChooseFinish />
       <ChooseCapacity />
       <AppleCare />
+      <TotalPrice />
     </RightWrapper>
   );
 }

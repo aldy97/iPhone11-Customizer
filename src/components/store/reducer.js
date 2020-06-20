@@ -59,6 +59,7 @@ const defaultState = {
   AppleCareTitle: 'Would you like to add AppleCare+ coverage?',
   AppleCareDesc:
     'Extend your hardware and software coverage and get priority support from the people who know iPhone best.',
+  Price: 1379,
 };
 
 export default (state = defaultState, action) => {
