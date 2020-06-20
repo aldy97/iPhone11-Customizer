@@ -193,7 +193,7 @@ export const SectionWrapper = styled(TradeInWrapper)`
 
 //用于选项是大长方形的配置区块
 export const Divider = styled.div`
-  border: 1px solid rgb(195, 195, 195);
+  border-bottom: 1px solid rgb(195, 195, 195);
   width: 442px;
   margin-top: 20px;
   margin-bottom: 20px;

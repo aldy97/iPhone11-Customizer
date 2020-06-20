@@ -39,26 +39,39 @@ const defaultState = {
     {
       cap: '64GB',
       text: ['$1,379.00', '$1,519.00'],
-      price: [1, 379.0, 1, 519.0],
     },
     {
       cap: '256GB',
       text: ['$1,589.00', '$1,729.00'],
-      price: [1, 589.0, 1, 729.0],
     },
     {
       cap: '512GB',
       text: ['$1,859.00', '$1,999.00'],
-      price: [1, 859.0, 1, 999.0],
     },
   ],
+  CapacitySelected: 0,
   AppleCareList: [
     { left: 'No AppleCare+ Coverage', right: '', price: 0 },
-    { left: 'AppleCare+', right: '+$249.00', price: 249.0 },
+    { left: 'AppleCare+', right: '+$249.00', price: 249 },
   ],
+  //默认没有选择AC
+  AppleCareSelected: 0,
   AppleCareTitle: 'Would you like to add AppleCare+ coverage?',
   AppleCareDesc:
     'Extend your hardware and software coverage and get priority support from the people who know iPhone best.',
+  //3-D array, 行数代表Cap，列数代表Model
+  PriceList: [
+    [
+      [1379, 1519],
+      [1589, 1729],
+      [1859, 1999],
+    ],
+    [
+      [1628, 1768],
+      [1838, 1978],
+      [2108, 2248],
+    ],
+  ],
   Price: 1379,
 };
 
@@ -66,6 +79,28 @@ export default (state = defaultState, action) => {
   if (action.type === constants.CHOOSE_MODEL) {
     const newState = JSON.parse(JSON.stringify(state));
     newState.ModelSelected = action.index;
+    newState.Price =
+      newState.PriceList[newState.AppleCareSelected][newState.CapacitySelected][
+        action.index
+      ];
+    return newState;
+  }
+  if (action.type === constants.CHOOSE_CAP) {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState.CapacitySelected = action.index;
+    newState.Price =
+      newState.PriceList[newState.AppleCareSelected][action.index][
+        newState.ModelSelected
+      ];
+    return newState;
+  }
+  if (action.type === constants.CHOOSE_AC) {
+    const newState = JSON.parse(JSON.stringify(state));
+    newState.AppleCareSelected = action.index;
+    newState.Price =
+      newState.PriceList[action.index][newState.CapacitySelected][
+        newState.ModelSelected
+      ];
     return newState;
   }
   return state;

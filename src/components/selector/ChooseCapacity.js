@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { handleChooseCap } from '../store/actionCreators';
 import { SectionWrapper, SmallOptionWrapper, Divider2 } from '../style';
 
 function ChooseCapacity(props) {
@@ -16,6 +17,7 @@ function ChooseCapacity(props) {
               const list = [false, false, false, false];
               list[index] = true;
               setCapList(list);
+              props.chooseCap(index);
             }}
           >
             <div className='cap'>{item.cap}</div>
@@ -35,6 +37,11 @@ const mapState = (state) => {
   };
 };
 
-const mapDispatch = (dispatch) => ({});
+const mapDispatch = (dispatch) => ({
+  chooseCap(index) {
+    const action = handleChooseCap(index);
+    dispatch(action);
+  },
+});
 
 export default connect(mapState, mapDispatch)(ChooseCapacity);

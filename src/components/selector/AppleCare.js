@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { handleChooseAC } from '../store/actionCreators';
 import { SectionWrapper, OptionWrapper, Divider } from '../style';
 import { connect } from 'react-redux';
 
@@ -19,6 +20,7 @@ function AppleCare(props) {
               const list = [false, false];
               list[index] = true;
               setOptions(list);
+              props.chooseAC(index);
             }}
           >
             <div className='left'>{item.left}</div>
@@ -39,4 +41,11 @@ const mapState = (state) => {
   };
 };
 
-export default connect(mapState, null)(AppleCare);
+const mapDispatch = (dispatch) => ({
+  chooseAC(index) {
+    const action = handleChooseAC(index);
+    dispatch(action);
+  },
+});
+
+export default connect(mapState, mapDispatch)(AppleCare);
