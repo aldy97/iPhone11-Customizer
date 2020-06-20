@@ -3,6 +3,7 @@ import TradeIn from './TradeIn';
 import ChooseModel from './ChooseModel';
 import ChooseFinish from './ChooseFinish';
 import ChooseCapacity from './ChooseCapacity';
+import AppleCare from './AppleCare';
 import { connect } from 'react-redux';
 import { RightWrapper } from '../style';
 
@@ -15,6 +16,7 @@ function Right(props) {
       <ChooseModel />
       <ChooseFinish />
       <ChooseCapacity />
+      <AppleCare />
     </RightWrapper>
   );
 }

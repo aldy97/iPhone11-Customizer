@@ -52,6 +52,13 @@ const defaultState = {
       price: [1, 859.0, 1, 999.0],
     },
   ],
+  AppleCareList: [
+    { left: 'No AppleCare+ Coverage', right: '', price: 0 },
+    { left: 'AppleCare+', right: '+$249.00', price: 249.0 },
+  ],
+  AppleCareTitle: 'Would you like to add AppleCare+ coverage?',
+  AppleCareDesc:
+    'Extend your hardware and software coverage and get priority support from the people who know iPhone best.',
 };
 
 export default (state = defaultState, action) => {
