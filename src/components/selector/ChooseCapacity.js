@@ -7,7 +7,7 @@ function ChooseCapacity(props) {
   const [cureeIndex, setIndex] = useState(-1);
   const { finishSelected, setCapacity, chooseCap } = props;
   return (
-    <SectionWrapper style={{ opacity: `${finishSelected ? 1 : 0.4}` }}>
+    <SectionWrapper style={{ opacity: `${finishSelected !== -1 ? 1 : 0.4}` }}>
       <h1>Choose your capacity.</h1>
       {props.CapacityList.map((item, index) => {
         return (
@@ -15,13 +15,13 @@ function ChooseCapacity(props) {
             className={index === cureeIndex ? 'selected' : null}
             key={index}
             onClick={() => {
-              if (finishSelected) {
+              if (finishSelected !== -1) {
                 setIndex(index);
                 setCapacity(true);
                 chooseCap(index);
               }
             }}
-            style={{ cursor: `${finishSelected ? '' : 'auto'}` }}
+            style={{ cursor: `${finishSelected !== -1 ? '' : 'auto'}` }}
           >
             <div className='cap'>{item.cap}</div>
             <div className='capText'>{item.text[props.ModelSelected]}</div>

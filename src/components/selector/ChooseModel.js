@@ -17,8 +17,9 @@ function ChooseModel(props) {
             onClick={() => {
               if (tradeInSelected) {
                 setIndex(index);
-                setModel(true);
+                setModel(index);
                 chooseModel(index);
+                console.log('model index:' + index);
               }
             }}
             style={{ cursor: `${tradeInSelected ? '' : 'auto'}` }}

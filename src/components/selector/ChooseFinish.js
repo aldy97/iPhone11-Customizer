@@ -8,7 +8,7 @@ function ChooseFinish(props) {
   const { modelSelected, setFinish } = props;
 
   return (
-    <SectionWrapper style={{ opacity: `${modelSelected ? 1 : 0.4}` }}>
+    <SectionWrapper style={{ opacity: `${modelSelected === -1 ? 0.4 : 1}` }}>
       <h1>Choose your finish.</h1>
       {props.FinishOptionList.map((item, index) => {
         return (
@@ -16,12 +16,13 @@ function ChooseFinish(props) {
             className={currIndex === index ? 'selected' : null}
             key={index}
             onClick={() => {
-              if (modelSelected) {
+              if (modelSelected !== -1) {
                 setIndex(index);
-                setFinish(true);
+                setFinish(index);
+                console.log('finish index:' + index);
               }
             }}
-            style={{ cursor: `${modelSelected ? '' : 'auto'}` }}
+            style={{ cursor: `${modelSelected !== -1 ? '' : 'auto'}` }}
           >
             <div className='content'>
               <img src={item.url} alt='' />
