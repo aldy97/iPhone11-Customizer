@@ -5,8 +5,8 @@ const defaultState = {
   titleIndex: 0,
   subtitle: 'Get up to $350 off with trade-in*',
   TradeInOptions: [
-    { left: 'Yes', right: 'From $1029' },
-    { left: 'No', right: 'From $1379' },
+    { left: 'Yes', right: 'From $1029', id: 0 },
+    { left: 'No', right: 'From $1379', id: 1 },
   ],
   ModelOptions: [
     { left: 'iPhone 11 Pro', right: 'From $1379' },

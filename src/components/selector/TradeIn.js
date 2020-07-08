@@ -4,7 +4,8 @@ import { TradeInWrapper, OptionWrapper, Divider } from '../style';
 
 //选择是否tradeIn的区块
 function TradeIn(props) {
-  const [tradeList, setTradeList] = useState([false, false]);
+  const [currIndex, setIndex] = useState(-1);
+  const { setTradeIn } = props;
   return (
     <TradeInWrapper>
       <h1>Do you have an iPhone to trade in?</h1>
@@ -13,11 +14,10 @@ function TradeIn(props) {
         return (
           <OptionWrapper
             key={index}
-            className={tradeList[index] ? 'selected' : null}
+            className={currIndex === index ? 'selected' : null}
             onClick={() => {
-              const list = [false, false];
-              list[index] = true;
-              setTradeList(list);
+              setIndex(index);
+              setTradeIn(true);
             }}
           >
             <div className='left'>{item.left}</div>

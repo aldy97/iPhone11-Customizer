@@ -4,21 +4,24 @@ import { SectionWrapper, OptionWrapper, Divider } from '../style';
 import { connect } from 'react-redux';
 
 function ChooseModel(props) {
-  const [modelList, setModelList] = useState([false, false]);
+  const { tradeInSelected, setModel, chooseModel } = props;
+  const [currIndex, setIndex] = useState(-1);
   return (
-    <SectionWrapper>
+    <SectionWrapper style={{ opacity: `${tradeInSelected ? 1 : 0.4}` }}>
       <h1>Choose your model.</h1>
       {props.ModelOptions.map((item, index) => {
         return (
           <OptionWrapper
-            className={modelList[index] ? 'selected' : null}
+            className={currIndex === index ? 'selected' : null}
             key={index}
             onClick={() => {
-              const list = [false, false];
-              list[index] = true;
-              setModelList(list);
-              props.chooseModel(index);
+              if (tradeInSelected) {
+                setIndex(index);
+                setModel(true);
+                chooseModel(index);
+              }
             }}
+            style={{ cursor: `${tradeInSelected ? '' : 'auto'}` }}
           >
             <div className='left'>{item.left}</div>
             <div className='right'>{item.right}</div>

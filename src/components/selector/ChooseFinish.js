@@ -4,21 +4,24 @@ import { SectionWrapper, SmallOptionWrapper, Divider2 } from '../style';
 
 //颜色选择区域
 function ChooseFinish(props) {
-  const [optionList, setOptionList] = useState([false, false, false, false]);
+  const [currIndex, setIndex] = useState(-1);
+  const { modelSelected, setFinish } = props;
 
   return (
-    <SectionWrapper>
+    <SectionWrapper style={{ opacity: `${modelSelected ? 1 : 0.4}` }}>
       <h1>Choose your finish.</h1>
       {props.FinishOptionList.map((item, index) => {
         return (
           <SmallOptionWrapper
-            className={optionList[index] ? 'selected' : null}
+            className={currIndex === index ? 'selected' : null}
             key={index}
             onClick={() => {
-              const list = [false, false, false, false];
-              list[index] = true;
-              setOptionList(list);
+              if (modelSelected) {
+                setIndex(index);
+                setFinish(true);
+              }
             }}
+            style={{ cursor: `${modelSelected ? '' : 'auto'}` }}
           >
             <div className='content'>
               <img src={item.url} alt='' />

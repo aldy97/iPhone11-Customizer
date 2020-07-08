@@ -90,9 +90,6 @@ export const OptionWrapper = styled.div`
   display: flex;
   cursor: pointer;
   border-radius: 5px;
-  &: hover {
-    border: 1px solid black;
-  }
   div {
     flex: 1;
     line-height: 83px;
