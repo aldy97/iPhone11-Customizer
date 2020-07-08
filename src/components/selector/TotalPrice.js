@@ -9,12 +9,13 @@ import {
 
 //总价栏目，右侧最后的区块
 function TotalPrice(props) {
+  const { AcSelected, Price, AppleCareIsSelected } = props;
   return (
-    <TotalPriceWrapper>
-      <PriceSection>
-        <div className='price'>${props.Price}</div>
+    <TotalPriceWrapper style={{ opacity: `${AcSelected ? 1 : 0.4}` }}>
+      <PriceSection style={{ display: `${AcSelected ? '' : 'none'}` }}>
+        <div className='price'>${Price}</div>
         <div className='AC'>
-          {props.AppleCareIsSelected ? 'AppleCare+ included' : ''}
+          {AppleCareIsSelected ? 'AppleCare+ included' : ''}
         </div>
         <PriceDivider />
       </PriceSection>

@@ -28,7 +28,7 @@ function Right(props) {
         setCapacity={setCapacity}
       />
       <AppleCare capacitySelected={capacitySelected} setAc={setAc} />
-      <TotalPrice />
+      <TotalPrice AcSelected={AcSelected} />
     </RightWrapper>
   );
 }
