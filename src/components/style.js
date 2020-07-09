@@ -224,6 +224,14 @@ export const TotalPriceWrapper = styled.div`
     font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica,
       Arial, sans-serif;
   }
+  .row {
+    height: 40px;
+    i {
+      font-size: 25px;
+      line-height: 40px;
+      color: #0070c9;
+    }
+  }
 `;
 
 export const PriceSection = styled.div`
@@ -241,14 +249,18 @@ export const PriceDivider = styled(Divider)`
   width: 385px;
 `;
 
-export const AddToBagButton = styled.div`
-  width: 333px;
-  height: 43px;
+export const AddToBagButton = styled.span`
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   border: 1px solid #07c;
+  border-radius: 5px;
   text-align: center;
   line-height: 43px;
   margin-left: 25px;
   margin-top: 15px;
+  margin-right: 22px;
   background-color: #0070c9;
   background: linear-gradient(#42a1ec, #0070c9);
   color: #fff;

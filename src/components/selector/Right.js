@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TradeIn from './TradeIn';
 import ChooseModel from './ChooseModel';
 import ChooseFinish from './ChooseFinish';

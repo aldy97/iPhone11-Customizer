@@ -19,7 +19,12 @@ function TotalPrice(props) {
         </div>
         <PriceDivider />
       </PriceSection>
-      <AddToBagButton>Add to bag</AddToBagButton>
+      <div className='row'>
+        <AddToBagButton style={{ cursor: `${AcSelected ? '' : 'auto'}` }}>
+          {AcSelected ? 'Add to bag' : 'Continue'}
+        </AddToBagButton>
+        <i className='iconfont icon-aixin' />
+      </div>
     </TotalPriceWrapper>
   );
 }
