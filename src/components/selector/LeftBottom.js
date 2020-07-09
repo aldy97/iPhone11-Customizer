@@ -10,7 +10,7 @@ function LeftBottom() {
 
   const PickUpReturn = styled.div`
     display: flex;
-    border-bottom: 2px solid #eee;
+    border-bottom: 1px solid rgb(195, 195, 195);
     padding-bottom: 30px;
     .pu {
       flex: 1;
@@ -42,7 +42,10 @@ function LeftBottom() {
           Free no-contact delivery
         </div>
         <div className='pu'>
-          <i className='iconfont icon-tuihuo'></i>
+          <i
+            className='iconfont icon-tuihuo'
+            style={{ fontSize: 20, marginBottom: 4 }}
+          ></i>
           Free returns
         </div>
       </PickUpReturn>
