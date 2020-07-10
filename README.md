@@ -1,1 +1,1 @@
-The purpose of the demo is simply to accomplish a seemingly-easy function of option selection for a product. Behind the scene it involves an orderly logic that needs to be implemented in a subtle way. Even though the demo is small, I will do it in a purpose of having high expandiblity and abstractness. 
+
